@@ -69,8 +69,12 @@ $lordOfRings->setVote(10);
             <div class="film">
                 <img src="<?= $movie->poster ?>" alt="">
                 <h2><?= $movie->title ?></h2>
-                <span><?= $movie->genre ?></span>
+                <span>genere: <?= $movie->genre ?></span>
                 <p><?= $movie->desc ?></p>
+                <?php if ($movie->vote) : ?>
+                    <span>Voto: <?= $movie->vote ?></span>
+                <?php endif ?>
+
             </div>
         <?php endforeach ?>
 
