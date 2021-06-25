@@ -32,20 +32,21 @@ class Movie
 //var_dump($starWars);
 
 $Movies = [
-    $starWars = new Movie('Star-Wars', 'fantasy', 'bla bla bla bla'),
-    $Constantine = new Movie('Constantine', 'fantasy', 'bla bla bla bla'),
-    $reLeone = new Movie('Lion-King', 'animation', 'bla bla bla bla'),
-    $Interstellar = new Movie('Interstellar', 'sci-fi', 'bla bla bla bla'),
-    $lordOfRings = new Movie('Lord Of Rings', 'fantasy', 'bla bla bla bla'),
-    $TheTrumanShow = new Movie('The Truman Show', 'Drama', 'bla bla bla bla'),
-    $Greese = new Movie('Greese', 'musical', 'bla bla bla bla'),
-    $TheRing = new Movie('The Ring', 'fantasy', 'bla bla bla bla'),
+    $starWars = new Movie('Star-Wars', ['fantasy', 'sci-fi'], 'bla bla bla bla'),
+    $Constantine = new Movie('Constantine', ['fantasy'], 'bla bla bla bla'),
+    $reLeone = new Movie('Lion-King', ['animation'], 'bla bla bla bla'),
+    $Interstellar = new Movie('Interstellar', ['sci-fi'], 'bla bla bla bla'),
+    $lordOfRings = new Movie('Lord Of Rings', ['fantasy'], 'bla bla bla bla'),
+    $TheTrumanShow = new Movie('The Truman Show', ['Drama'], 'bla bla bla bla'),
+    $Greese = new Movie('Greese', ['musical', 'commedy'], 'bla bla bla bla'),
+    $TheRing = new Movie('The Ring', ['fantasy'], 'bla bla bla bla'),
 
 
 ];
 
 $Constantine->setPoster('https://m.media-amazon.com/images/M/MV5BODRiNmFhY2EtMGY2OC00YjI2LWIyYjQtYzFiM2ZhNjdhYzE4XkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_UY1200_CR85,0,630,1200_AL_.jpg');
 $lordOfRings->setVote(10);
+
 //echo '<pre>', var_dump($Movies), '</pre>'; 
 ?>
 
@@ -69,7 +70,12 @@ $lordOfRings->setVote(10);
             <div class="film">
                 <img src="<?= $movie->poster ?>" alt="">
                 <h2><?= $movie->title ?></h2>
-                <span>genere: <?= $movie->genre ?></span>
+                <span>genere:
+                    <?php
+                    foreach ($movie->genre as $genre) : ?>
+                        <span> - <?= $genre ?></span>
+                    <?php endforeach ?>
+                </span>
                 <p><?= $movie->desc ?></p>
                 <?php if ($movie->vote) : ?>
                     <span>Voto: <?= $movie->vote ?></span>
