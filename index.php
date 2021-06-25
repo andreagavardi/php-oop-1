@@ -44,8 +44,8 @@ $Movies = [
 
 ];
 
-$Constantine->setPoster('https://m.media-amazon.com/images/M/MV5BODRiNmFhY2EtMGY2OC00YjI2LWIyYjQtYzFiM2ZhNjdhYzE4XkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_UY1200_CR85,0,630,1200_AL_.jpg')
-
+$Constantine->setPoster('https://m.media-amazon.com/images/M/MV5BODRiNmFhY2EtMGY2OC00YjI2LWIyYjQtYzFiM2ZhNjdhYzE4XkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_UY1200_CR85,0,630,1200_AL_.jpg');
+$lordOfRings->setVote(10);
 //echo '<pre>', var_dump($Movies), '</pre>'; 
 ?>
 
