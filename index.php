@@ -21,6 +21,10 @@ class Movie
     {
         $this->vote = $vote;
     }
+    public function setPoster($url)
+    {
+        $this->poster = $url;
+    }
 }
 
 //$starWars = new Movie('Star-Wars', 'fantasy', 'bla bla bla bla');
@@ -40,4 +44,38 @@ $Movies = [
 
 ];
 
-echo '<pre>', var_dump($Movies), '</pre>';
+$Constantine->setPoster('https://m.media-amazon.com/images/M/MV5BODRiNmFhY2EtMGY2OC00YjI2LWIyYjQtYzFiM2ZhNjdhYzE4XkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_UY1200_CR85,0,630,1200_AL_.jpg')
+
+//echo '<pre>', var_dump($Movies), '</pre>'; 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Php</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <h1>movies</h1>
+    <div class="container">
+
+        <?php foreach ($Movies as $movie) : ?>
+
+            <div class="film">
+                <img src="<?= $movie->poster ?>" alt="">
+                <h2><?= $movie->title ?></h2>
+                <span><?= $movie->genre ?></span>
+                <p><?= $movie->desc ?></p>
+            </div>
+        <?php endforeach ?>
+
+    </div>
+
+</body>
+
+</html>
